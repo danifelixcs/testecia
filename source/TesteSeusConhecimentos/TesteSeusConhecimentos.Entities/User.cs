@@ -5,9 +5,8 @@ using System.Text;
 
 namespace TesteSeusConhecimentos.Entities
 {
-    public class User
+    public class User : BaseEntity
     {
-        public virtual int IdUser { get; set; }
         public virtual string Name { get; set; }
         public virtual string LastName { get; set; }
         public virtual string Email { get; set; }
@@ -16,18 +15,12 @@ namespace TesteSeusConhecimentos.Entities
         {
 
         }
-
         public User(int idUser, string name, string lastName, string email)
         {
-            this.IdUser = idUser;
+            this.Id = idUser;
             this.Name = name;
             this.LastName = lastName;
             this.Email = email;
-        }
-
-        public virtual bool IsNew()
-        {
-            return this.IdUser == 0;
         }
     }
 }
